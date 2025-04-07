@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Meeting Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Meeting Assistant</h1>
+            <p>Schedule meetings and generate summaries with AI</p>
+        </header>
+
+        <main class="main-content">
+            <div class="columns">
+                <section id="schedule-section" class="section" data-type="Schedule">
+                    <div class="section-header">
+                        <h2>Schedule a Meeting</h2>
+                        <p class="section-description">Create and schedule meetings with Google Calendar integration</p>
+                    </div>
+                    <form id="meeting-form">
+                        <div class="form-group">
+                            <label for="title"><i class="fas fa-heading"></i> Meeting Title</label>
+                            <input type="text" id="title" name="title" required placeholder="Enter meeting title">
+                        </div>
+                        <div class="form-group">
+                            <label for="description"><i class="fas fa-align-left"></i> Description</label>
+                            <textarea id="description" name="description" rows="3" required placeholder="Enter meeting description"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="start-time"><i class="fas fa-clock"></i> Start Time</label>
+                                <input type="datetime-local" id="start-time" name="start-time" required>
+                            </div>
+                            <div class="form-group half">
+                                <label for="end-time"><i class="fas fa-clock"></i> End Time</label>
+                                <input type="datetime-local" id="end-time" name="end-time" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="participants"><i class="fas fa-users"></i> Participants (one email per line)</label>
+                            <textarea id="participants" name="participants" rows="3" required placeholder="Enter participant emails"></textarea>
+                        </div>
+                        <button type="submit" class="btn primary"><i class="fas fa-calendar-plus"></i> Schedule Meeting</button>
+                    </form>
+                    <div id="schedule-result" class="result"></div>
+                </section>
+
+                <section id="summary-section" class="section" data-type="Summary">
+                    <div class="section-header">
+                        <h2>Generate Meeting Summary</h2>
+                        <p class="section-description">Create AI-powered summaries from meeting transcripts</p>
+                    </div>
+                    <form id="summary-form">
+                        <div class="form-group">
+                            <label for="transcript"><i class="fas fa-file-alt"></i> Meeting Transcript</label>
+                            <textarea id="transcript" name="transcript" rows="10" required placeholder="Paste your meeting transcript here"></textarea>
+                        </div>
+                        <button type="submit" class="btn primary"><i class="fas fa-magic"></i> Generate Summary</button>
+                    </form>
+                    <div id="summary-result" class="result"></div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 AI Meeting Assistant. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
